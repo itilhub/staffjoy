@@ -26,6 +26,9 @@ import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 鉴权拦截器
+ */
 public class AuthRequestInterceptor implements PreForwardRequestInterceptor {
     private final static ILogger log = SLoggerFactory.getLogger(AuthRequestInterceptor.class);
 
@@ -48,12 +51,15 @@ public class AuthRequestInterceptor implements PreForwardRequestInterceptor {
         // sanitize incoming requests and set authorization information
         String authorization = this.setAuthHeader(data, mapping);
 
+        // 验证限制
         this.validateRestrict(mapping);
+        // 验证安全性
         this.validateSecurity(data, mapping, authorization);
 
         // TODO - filter restricted headers
     }
 
+    // 认证和设置访问权限
     private String setAuthHeader(RequestData data, MappingProperties mapping) {
         // default to anonymous web when prove otherwise
         String authorization = AuthConstant.AUTHORIZATION_ANONYMOUS_WEB;

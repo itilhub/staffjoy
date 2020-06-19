@@ -5,6 +5,7 @@ import feign.RequestTemplate;
 import org.springframework.util.StringUtils;
 
 /**
+ * Feign 请求拦截器，为Feign客户端的请求添加上用户id
  * Feign interceptor，for passing auth info to backend
  *
  * @author bobo

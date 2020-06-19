@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 会话管理
+ */
 public class Sessions {
     public static final long SHORT_SESSION = TimeUnit.HOURS.toMillis(12);
     public static final long LONG_SESSION = TimeUnit.HOURS.toMillis(30 * 24);

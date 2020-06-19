@@ -8,7 +8,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- *
+ * 认证上下问帮助类
  * A context holder class for holding the current userId and authz info
  *
  * @author bobo

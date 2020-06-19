@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 
+/**
+ * 控制器授权截获机制
+ * 拦截@Authorize 标注的方法，来进行内部微服务的权限控制
+ */
 public class AuthorizeInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {

@@ -12,6 +12,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * JWT 签名令牌
+ */
 public class Sign {
 
     public static final String CLAIM_EMAIL = "email";
