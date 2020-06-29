@@ -59,10 +59,11 @@ public class PersonalMailSendService implements MailSendService {
             String subject = String.format("[%s] %s", envConfig.getName(), req.getSubject());
             req.setSubject(subject);
 
-            if (!req.getTo().endsWith(MailConstant.STAFFJOY_EMAIL_SUFFIX)) {
-                logger.warn("Intercepted sending due to non-production environment.");
-                return;
-            }
+            // 开发环境不校验邮箱域名
+//            if (!req.getTo().endsWith(MailConstant.STAFFJOY_EMAIL_SUFFIX)) {
+//                logger.warn("Intercepted sending due to non-production environment.");
+//                return;
+//            }
         }
 
 
