@@ -4,7 +4,10 @@ import com.aliyuncs.DefaultAcsClient;
 import com.aliyuncs.IAcsClient;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Import;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import xyz.staffjoy.common.config.StaffjoyRestConfig;
 import xyz.staffjoy.mail.MailConstant;
@@ -27,12 +30,27 @@ public class AppConfig {
     @Autowired
     AppProps appProps;
 
+    @ConditionalOnProperty(value = {"staffjoy.aliyun-enable"}, havingValue = "true")
     @Bean
     public IAcsClient acsClient() {
         IClientProfile profile = DefaultProfile.getProfile(MailConstant.ALIYUN_REGION_ID,
                 appProps.getAliyunAccessKey(), appProps.getAliyunAccessSecret());
         IAcsClient client = new DefaultAcsClient(profile);
         return client;
+    }
+
+    @ConditionalOnProperty(value = {"staffjoy.mail-enable"}, havingValue = "true")
+    @Bean
+    public JavaMailSender javaMailSender(){
+        JavaMailSenderImpl javaMailSenderImpl = new JavaMailSenderImpl();
+        javaMailSenderImpl.setHost(appProps.getMailHost());
+        if (null != appProps.getMailPort()){
+            javaMailSenderImpl.setPort(appProps.getMailPort());
+        }
+        javaMailSenderImpl.setProtocol(appProps.getMailProtocol());
+        javaMailSenderImpl.setUsername(appProps.getMailUsername());
+        javaMailSenderImpl.setPassword(appProps.getMailPassword());
+        return javaMailSenderImpl;
     }
 
     @Bean(name=ASYNC_EXECUTOR_NAME)

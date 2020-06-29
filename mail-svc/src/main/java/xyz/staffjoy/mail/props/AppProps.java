@@ -20,5 +20,13 @@ public class AppProps {
     // aliyun directmail props
     @NotNull private String aliyunAccessKey;
     @NotNull private String aliyunAccessSecret;
+    @NotNull private boolean aliyunEnable = false;
+
+    @NotNull private boolean mailEnable = false;
+    @NotNull private String mailHost;
+    @NotNull private Integer mailPort;
+    @NotNull private String mailProtocol;
+    @NotNull private String mailUsername;
+    @NotNull private String mailPassword;
 
 }
