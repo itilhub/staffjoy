@@ -45,6 +45,7 @@ import static java.util.stream.Collectors.toList;
 @RequiredArgsConstructor
 public class AccountService {
 
+    // 结构化日志
     static ILogger logger = SLoggerFactory.getLogger(AccountService.class);
 
     private final AccountRepo accountRepo;
@@ -149,6 +150,7 @@ public class AccountService {
 
         // todo - sms onboarding (if worker??)
 
+        // 结构化日志 案例
         LogEntry auditLog = LogEntry.builder()
                 .authorization(AuthContext.getAuthz())
                 .currentUserId(AuthContext.getUserId())

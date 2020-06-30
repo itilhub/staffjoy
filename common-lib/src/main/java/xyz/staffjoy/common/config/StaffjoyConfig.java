@@ -20,6 +20,10 @@ import xyz.staffjoy.common.env.EnvConfig;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+/**
+ * Staffjoy 项目配置类
+ * 用于配置一些项目所需要的Bean
+ */
 @Configuration
 @EnableConfigurationProperties(StaffjoyProps.class)
 public class StaffjoyConfig implements WebMvcConfigurer {
@@ -67,9 +71,11 @@ public class StaffjoyConfig implements WebMvcConfigurer {
     @PostConstruct
     public void init() {
         // init structured logging
+        // 初始化日志格式 设置日志格式为JSON
         StructLog4J.setFormatter(JsonFormatter.getInstance());
 
         // global log fields setting
+        // 全局日志字段设置
         StructLog4J.setMandatoryContextSupplier(() -> new Object[]{
                 "env", activeProfile,
                 "service", appName});

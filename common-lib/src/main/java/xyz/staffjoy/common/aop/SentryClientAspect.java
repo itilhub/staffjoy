@@ -9,6 +9,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 import xyz.staffjoy.common.env.EnvConfig;
 
+/**
+ * Sentry 错误日志收集平台客户端 AOP
+ * 根据环境判断是否手机错误日志
+ */
 @Aspect
 @Slf4j
 public class SentryClientAspect {
