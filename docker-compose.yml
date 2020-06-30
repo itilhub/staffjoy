@@ -68,8 +68,14 @@ services:
       - SPRING_PROFILES_ACTIVE
       - SERVER_PORT
       - SENTRY_DSN
+      - ALIYUN_ENABLE
       - ALIYUN_ACCESS_KEY
       - ALIYUN_ACCESS_SECRET
+      - MAIL_ENABLE
+      - MAIL_HOST
+      - MAIL_PROTOCOL
+      - MAIL_USERNAME
+      - MAIL_PASSWORD
     networks:
       - internal_access
       - external_access # aliyun access

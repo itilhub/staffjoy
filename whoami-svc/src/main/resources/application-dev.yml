@@ -12,5 +12,5 @@ management:
         include: "*"
 
 staffjoy:
-  account-service-endpoint: http://localhost:8081
+  account-service-endpoint: http://localhost:8090
   company-service-endpoint: http://localhost:8082

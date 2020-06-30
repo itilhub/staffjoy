@@ -14,7 +14,7 @@ faraday:
     -
       name: account_route
       host: account.staffjoy-v2.local
-      destinations: localhost:8081
+      destinations: localhost:8090
     -
       name: company_route
       host: company.staffjoy-v2.local
