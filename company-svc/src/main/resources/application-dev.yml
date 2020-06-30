@@ -10,7 +10,7 @@ server:
 
 staffjoy:
   email-service-endpoint: http://localhost:8088
-  account-service-endpoint: http://localhost:8090
+  account-service-endpoint: http://localhost:8081
   bot-service-endpoint: http://localhost:8087
 
 management:

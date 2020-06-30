@@ -15,7 +15,7 @@ staffjoy:
   aliyun-access-secret: ${ALIYUN_ACCESS_SECRET}
   mail-enable: ${MAIL_ENABLE}
   mail-host: ${MAIL_HOST}
-  mail-port: ${MAIL_PORT}
+#  mail-port: ${MAIL_PORT}
   mail-protocol: ${MAIL_PROTOCOL}
   mail-username: ${MAIL_USERNAME}
   mail-password: ${MAIL_PASSWORD}
