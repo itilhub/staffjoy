@@ -47,10 +47,15 @@ public class StaffjoyConfig implements WebMvcConfigurer {
         return EnvConfig.getEnvConfg(activeProfile);
     }
 
+    /**
+     * 异常监控 Sentry 客户端初始化配置
+     * @return
+     */
     @Bean
     public SentryClient sentryClient() {
 
         SentryClient sentryClient = Sentry.init(staffjoyProps.getSentryDsn());
+        // 配置公共字段
         sentryClient.setEnvironment(activeProfile);
         sentryClient.setRelease(staffjoyProps.getDeployEnv());
         sentryClient.addTag("service", appName);

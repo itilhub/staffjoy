@@ -217,6 +217,10 @@ public class ServiceHelper {
         }
     }
 
+    /**
+     * sentry 应用
+     * 根据环境来自适应启动
+     */
     public void handleException(ILogger log, Exception ex, String errMsg) {
         log.error(errMsg, ex);
         if (!envConfig.isDebug()) {
