@@ -34,6 +34,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+/**
+ * 集成测试
+ * 需要启动Web 组件并使用定义端口
+ * 开启Feign Client
+ * 引入TestConfig 来解决使用Feign调用时自动添加Header
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 @EnableFeignClients(basePackages = {"xyz.staffjoy.account.client"})
@@ -46,6 +52,10 @@ public class AccountControllerTest {
 
     @Autowired
     EnvConfig envConfig;
+
+    /**
+     * 3rd 依赖进行Mock
+     */
 
     @MockBean
     MailClient mailClient;
