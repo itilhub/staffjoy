@@ -18,6 +18,10 @@ import java.time.ZoneId;
 
 import static org.junit.Assert.*;
 
+/**
+ * 不启动Web 组件，加快测试速度
+ * Repository 单元测试
+ */
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.NONE)
 @RunWith(SpringRunner.class)
 public class AccountRepoTest {
