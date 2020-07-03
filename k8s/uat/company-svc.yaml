@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: company-svc
-          image: boboweike/company-svc
+          image: jizhe/company-svc
           ports:
             - name: http-port
               containerPort: 80

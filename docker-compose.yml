@@ -3,7 +3,7 @@ version: '3.7'
 services:
   account-service:
     build: ./account-svc
-    image: boboweike/account-svc
+    image: jizhe/account-svc
     environment:
       - SPRING_PROFILES_ACTIVE
       - SERVER_PORT
@@ -25,7 +25,7 @@ services:
 
   company-service:
     build: ./company-svc
-    image: boboweike/company-svc
+    image: jizhe/company-svc
     environment:
       - SPRING_PROFILES_ACTIVE
       - SERVER_PORT
@@ -46,7 +46,7 @@ services:
 
   bot-service:
     build: ./bot-svc
-    image: boboweike/bot-svc
+    image: jizhe/bot-svc
     environment:
       - SPRING_PROFILES_ACTIVE
       - SERVER_PORT
@@ -63,7 +63,7 @@ services:
 
   email-service:
     build: ./mail-svc
-    image: boboweike/mail-svc
+    image: jizhe/mail-svc
     environment:
       - SPRING_PROFILES_ACTIVE
       - SERVER_PORT
@@ -89,7 +89,7 @@ services:
 
   whoami-service:
     build: ./whoami-svc
-    image: boboweike/whoami-svc
+    image: jizhe/whoami-svc
     environment:
       - SPRING_PROFILES_ACTIVE
       - SERVER_PORT
@@ -115,7 +115,7 @@ services:
 
   www-service:
     build: ./web-app
-    image: boboweike/www-svc
+    image: jizhe/www-svc
     environment:
       - SPRING_PROFILES_ACTIVE
       - SERVER_PORT
@@ -135,7 +135,7 @@ services:
 
   faraday-service:
     build: ./faraday
-    image: boboweike/faraday-svc
+    image: jizhe/faraday-svc
     ports:
       - 80:80
     environment:
@@ -160,7 +160,7 @@ services:
     build:
       context: ./frontend
       dockerfile: myaccount/Dockerfile
-    image: boboweike/myaccount-spa
+    image: jizhe/myaccount-spa
     networks:
       - internal_access
 
@@ -168,7 +168,7 @@ services:
     build:
       context: ./frontend
       dockerfile: app/Dockerfile
-    image: boboweike/app-spa
+    image: jizhe/app-spa
     networks:
       - internal_access
 

@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: whoami-svc
-          image: boboweike/whoami-svc
+          image: jizhe/whoami-svc
           ports:
             - name: http-port
               containerPort: 80
