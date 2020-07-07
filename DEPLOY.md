@@ -67,7 +67,7 @@
 4. 使本地hosts生效  
 5. 清理  
     + ```docker-compose down```  
-
+ 
 
 # k8s 部署  
 
