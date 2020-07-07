@@ -37,3 +37,6 @@ config/*.yml
 k8s/test/config/config.yaml
 k8s/prod/config/config.yaml
 k8s/uat/config/config.yaml
+
+### Line Separators
+* text eol=lf
